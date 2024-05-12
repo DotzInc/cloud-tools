@@ -7,18 +7,18 @@ from cloud.protocols import StorageUploader
 
 class TestStorageUploader(unittest.TestCase):
     @mock.patch("google.cloud.storage.Client")
-    def test_storage_uploader(self, ClientMock):
+    def test_storage_uploader(self, client_mock):
         uploader = Uploader()
 
-        self.assertTrue(isinstance(uploader, StorageUploader))
+        self.assertIsInstance(uploader, StorageUploader)
 
-        bucket_name = "test_bucket"
+        bucket_name = "test-bucket"
         object_name = "test.txt"
         source_path = "/tmp/test.txt"
 
         uploader.upload(bucket_name, object_name, source_path)
 
-        cli = ClientMock.return_value
+        cli = client_mock.return_value
         cli.bucket.assert_called_once_with(bucket_name)
 
         bucket = cli.bucket.return_value
