@@ -12,6 +12,7 @@ endif
 
 build:
 	python3 -m build
+	twine check dist/*
 
 .env:
 	echo 'PYTHONPATH="$(SOURCEPATH)"' > .env
