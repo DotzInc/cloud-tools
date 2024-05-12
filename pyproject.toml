@@ -3,7 +3,7 @@ requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "cloud-io"
+name = "cloud-tools"
 version = "0.1.0"
 description = "Toolkit for the cloud."
 readme = {file = "README.md", content-type = "text/markdown"}
