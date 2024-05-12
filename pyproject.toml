@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cloud-io"
+version = "0.1.0"
+description = "Toolkit for the cloud."
+readme = {file = "README.md", content-type = "text/markdown"}
+authors = [
+    {name = "Dotz Developers", email = "devs-dotz@dotz.com"},
+]
+keywords = ["cloud", "tools", "utilities", "google", "gcp", "amazon", "aws"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
+requires-python = ">=3.8"
+dependencies = []
+
+[project.optional-dependencies]
+amazon = ["boto3"]
+google = ["google-cloud-pubsub", "google-cloud-storage"]
