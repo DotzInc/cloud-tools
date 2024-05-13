@@ -8,14 +8,11 @@ ifeq ($(filter undefine,$(value .FEATURES)),)
 SHELL = env PATH="$(PATH)" /bin/bash
 endif
 
-.PHONY: .env .venv
+.PHONY: .venv
 
 build:
 	python3 -m build
 	twine check dist/*
-
-.env:
-	echo 'PYTHONPATH="$(SOURCEPATH)"' > .env
 
 .venv:
 	python3 -m venv $(VIRTUALENV)
@@ -29,7 +26,7 @@ install-hook:
 	echo "make lint" > .git/hooks/pre-commit
 	chmod +x .git/hooks/pre-commit
 
-install-dev: .venv .env install-hook install-code-ext
+install-dev: .venv install-hook install-code-ext
 	if [ -f requirements-dev.txt ]; then pip install -r requirements-dev.txt; fi
 
 lint:
