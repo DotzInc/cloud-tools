@@ -21,7 +21,6 @@ classifiers = [
     "Programming Language :: Python :: 3.12",
     "Topic :: Internet",
     "Topic :: Software Development",
-    "Development Status :: 1 - Beta",
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
 ]
