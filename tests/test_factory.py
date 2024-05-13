@@ -35,11 +35,10 @@ class TestStorageUploaderFactory(unittest.TestCase):
         self.assertIsInstance(uploader, s3.Uploader)
 
     def test_uploader_protocol_validation(self):
-        FileUploader = factory.storage_uploader(NotStorageUploader)  # type: ignore
-        error = f"{NotStorageUploader.__name__} does not implement StorageUploader protocol"
+        error = "NotStorageUploader does not implement StorageUploader protocol"
 
         with self.assertRaisesRegex(AssertionError, error):
-            FileUploader()
+            factory.storage_uploader(NotStorageUploader)  # type: ignore
 
 
 class TestMessagePublisherFactory(unittest.TestCase):
@@ -52,8 +51,7 @@ class TestMessagePublisherFactory(unittest.TestCase):
         self.assertIsInstance(publisher, pubsub.Publisher)
 
     def test_publisher_protocol_validation(self):
-        Publisher = factory.message_publisher(NotMessagePublisher)  # type: ignore
         error = "NotMessagePublisher does not implement MessagePublisher protocol"
 
         with self.assertRaisesRegex(AssertionError, error):
-            Publisher()
+            factory.message_publisher(NotMessagePublisher)  # type: ignore
