@@ -34,6 +34,11 @@ Repository = "https://github.com/DotzInc/cloud-toolbox"
 [project.optional-dependencies]
 amazon = ["boto3"]
 google = ["google-cloud-pubsub", "google-cloud-storage"]
+all = [
+    "boto3",
+    "google-cloud-pubsub",
+    "google-cloud-storage",
+]
 
 [tool.ruff]
 exclude = [
