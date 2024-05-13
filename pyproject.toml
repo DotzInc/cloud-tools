@@ -3,9 +3,9 @@ requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "cloud-tools"
+name = "cloudtoolbox"
 version = "0.1.0"
-description = "Toolkit for the cloud."
+description = "Toolbox for the cloud."
 readme = {file = "README.md", content-type = "text/markdown"}
 authors = [
     {name = "Dotz Developers", email = "devs-dotz@dotz.com"},
