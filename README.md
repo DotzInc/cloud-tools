@@ -22,9 +22,9 @@ pip install cloudtoolbox
 
 Cloud Toolbox offers the following optional dependencies for easy installation of provider SDKs:
 
-`cloudtoolbox[amazon]` - Installs the Amazon AWS SDK.
-`cloudtoolbox[google]` - Installs the Google Cloud SDK.
-`cloudtoolbox[all]` - Installs SDKs for both providers.
+* `cloudtoolbox[amazon]` - Installs the Amazon AWS SDK.
+* `cloudtoolbox[google]` - Installs the Google Cloud SDK.
+* `cloudtoolbox[all]` - Installs SDKs for both providers.
 
 ## Example
 
