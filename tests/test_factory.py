@@ -2,7 +2,7 @@ import unittest
 from unittest import mock
 
 from cloud import factory
-from cloud.amazon import s3, sns
+from cloud.amazon import s3, sns, sqs
 from cloud.google import pubsub, storage
 from cloud.protocols import MessagePublisher, StorageUploader
 
@@ -52,11 +52,13 @@ class TestMessagePublisherFactory(unittest.TestCase):
 
     @mock.patch("boto3.client")
     def test_amazon_publisher(self, _):
-        Publisher = factory.message_publisher(sns.Publisher)
-        publisher = Publisher()
+        for cls in (sns.Publisher, sqs.Publisher):
+            with self.subTest(class_name=cls.__name__):
+                Publisher = factory.message_publisher(cls)
+                publisher = Publisher()
 
-        self.assertIsInstance(publisher, MessagePublisher)
-        self.assertIsInstance(publisher, sns.Publisher)
+                self.assertIsInstance(publisher, MessagePublisher)
+                self.assertIsInstance(publisher, cls)
 
     def test_publisher_protocol_validation(self):
         error = "NotMessagePublisher does not implement MessagePublisher protocol"
