@@ -11,6 +11,7 @@ class TestStorageUploader(unittest.TestCase):
         uploader = Uploader()
 
         self.assertIsInstance(uploader, StorageUploader)
+        client_mock.assert_called_once_with()
 
         bucket_name = "test-bucket"
         object_name = "test.txt"

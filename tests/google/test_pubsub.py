@@ -11,6 +11,7 @@ class TestMessagePublisher(unittest.TestCase):
         publisher = Publisher()
 
         self.assertIsInstance(publisher, MessagePublisher)
+        client_mock.assert_called_once_with()
 
         topic = "projects/test-project/topics/test-topic"
         message = "test message"
