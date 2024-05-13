@@ -28,6 +28,9 @@ classifiers = [
 requires-python = ">=3.8"
 dependencies = []
 
+[project.urls]
+Repository = "https://github.com/DotzInc/cloud-toolbox"
+
 [project.optional-dependencies]
 amazon = ["boto3"]
 google = ["google-cloud-pubsub", "google-cloud-storage"]
