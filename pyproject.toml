@@ -12,7 +12,18 @@ authors = [
 ]
 keywords = ["cloud", "tools", "utilities", "google", "gcp", "amazon", "aws"]
 classifiers = [
-    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Internet",
+    "Topic :: Software Development",
+    "Development Status :: 1 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
 ]
 requires-python = ">=3.8"
 dependencies = []
