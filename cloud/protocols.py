@@ -7,5 +7,12 @@ class StorageUploader(Protocol):
 
 
 @runtime_checkable
+class StorageDownloader(Protocol):
+    def download(
+        self, bucket_name: str, source_filename: str, destination_filename: str
+    ) -> None: ...
+
+
+@runtime_checkable
 class MessagePublisher(Protocol):
     def publish(self, recipient: str, message: str, **attrs: Any) -> None: ...
