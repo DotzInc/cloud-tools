@@ -4,7 +4,7 @@ coverage==7.5.3
 google-cloud-pubsub==2.21.2
 google-cloud-storage==2.16.0
 ruff==0.4.7
-setuptools==70.0.0
+setuptools==70.1.1
 twine==5.1.0
 
 -e .
